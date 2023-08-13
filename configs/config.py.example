@@ -1,17 +1,17 @@
 openai_api_key = '<openai-api-key>'
 
 models = (
-    'gpt-4',
-    'gpt-4-32k',
+    # 'gpt-4',
+    # 'gpt-4-32k',
     'gpt-3.5-turbo',
     'gpt-3.5-turbo-16k',
-    'text-davinci-003',
-    'text-davinci-002',
+    # 'text-davinci-003',
+    # 'text-davinci-002',
 )
 
 multiple_choice_system = 'You are an exam taker. User will give you a question and four options.\
-    Respond just a number, number of the correct answer'
+    Respond just a number, number of the correct answer and nothing else.'
 longs_system = 'You are an exam taker. User will give you a question.\
-    Respond with the correct answer'
+    Respond with the correct answer.'
 longs_examiner_system = 'You are an examiner. User will give you a question, a student response and a true answer.\
-    Respond just a number between 0 and 10, score of the student for this question'
+    Respond just a number between 0 and 10, score of the student for this question.'

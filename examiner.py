@@ -8,7 +8,7 @@ from configs import config
 openai.api_key = config.openai_api_key
 
 
-def answer_multiple_choice(question, options, model=config.models[2]):
+def answer_multiple_choice(question, options, model=config.models[0]):
     options_text = '\n'.join(f'{i}. {option}' for i, option in enumerate(options, start=1))
     response = openai.ChatCompletion.create(
         model=model,
@@ -20,7 +20,7 @@ def answer_multiple_choice(question, options, model=config.models[2]):
 
     return response['choices'][0]['message']['content']
 
-def answer_longs(question, model=config.models[2]):
+def answer_longs(question, model=config.models[0]):
     response = openai.ChatCompletion.create(
         model=model,
         messages=[
@@ -41,7 +41,7 @@ def score_multiple_choice(model_responds, answers):
             wrongs += 1
     return 100 * corrects / (corrects + wrongs)
 
-def score_longs(question, model_responds, answers, model=config.models[2]):
+def score_longs(question, model_responds, answers, model=config.models[0]):
     scores = []
     for respond, answer in zip(model_responds, answers):
         response = openai.ChatCompletion.create(
@@ -58,7 +58,26 @@ def score_longs(question, model_responds, answers, model=config.models[2]):
     return np.sum(scores) / len(scores)
 
 if __name__ == '__main__':
-        
+
+    mc = pd.read_csv('Questions\MCTest.csv')
+    questions = mc['Q']
+    choices = mc[['A', 'B', 'C', 'D']]
+
+    models = config.models
+
+    results = {}
+
+    for model in models:
+        answers = []
+        for q, c in zip(questions, choices.iterrows()):
+            answer = answer_multiple_choice(q, list(c[1]), model)
+            print(answer)
+            answers.append(answer)
+
+        results[model] = answers
+
+    df = pd.DataFrame(results)
+    df.to_csv('./AIResponses/MCTest.csv')
     # questions = [
     #     'What is epidemiology?',
     #     # Add more questions here...
@@ -74,16 +93,16 @@ if __name__ == '__main__':
         # answer = answer_multiple_choice(question, option)
         # answers.append(answer)
 
-    answers = []
+    # answers = []
 
-    topics = pd.read_csv('longs.csv')['Topics']
-    true_answers = pd.read_csv('longs.csv')['Answers']
+    # topics = pd.read_csv('longs.csv')['Topics']
+    # true_answers = pd.read_csv('longs.csv')['Answers']
 
-    for question in topics:
-        answer = answer_longs(question)
-        print(answer)
-        answers.append(answer)
+    # for question in topics:
+    #     answer = answer_longs(question)
+    #     print(answer)
+    #     answers.append(answer)
 
-    score = score_longs(question, answers, answers, model=config.models[2])
+    # score = score_longs(question, answers, answers, model=config.models[0])
 
-    print(score)
+    # print(score)
