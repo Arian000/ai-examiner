@@ -1,0 +1,44 @@
+Q,A
+AGE-ADJUSTED MORTALITY RATE,A mortality rate statistically modified to eliminate the effect of different age distributions in the different populations.
+ATTRIBUTABLE PROPORTION,A measure of the public health impact of a causative factor; proportion of a disease in a group that is exposed to a particular factor which can be attributed to their exposure to that factor.
+BIAS,"Deviation of results or inferences from the truth, or processes leading to such systematic deviation. Any trend in the collection, analysis, interpretation, publication, or review of data that can lead to conclusions that are systematically different from the truth."
+CARRIER,"A person or animal without apparent disease who harbors a specific infectious agent and is capable of transmitting the agent to others. The carrier state may occur in an individual with an infection that is inapparent throughout its course (known as asymptomatic carrier), or during the incubation period, convalescence, and postconvalescence of an individual with a clinically recognizable disease. The carrier state may be of short or long duration (transient carrier or chronic carrier)."
+CASE,"In epidemiology, a countable instance in the population or study group of a particular disease, health disorder, or condition under investigation. Sometimes, an individual with the particular disease."
+CASE-CONTROL STUDY,A type of observational analytic study. Enrollment into the study is based on presence (“case”) or absence (“control”) of disease. Characteristics such as previous exposure are then compared between cases and controls.
+CAUSE-SPECIFIC MORTALITY RATE,The mortality rate from a specified cause for a population. The numerator is the number of deaths attributed to a specific cause during a specified time interval; the denominator is the size of the population at the midpoint of the time interval.
+CLUSTER,"An aggregation of cases of a disease or other health-related condition, particularly cancer and birth defects, which are closely grouped in time and place. The number of cases may or may not exceed the expected number; frequently the expected number is not known."
+COHORT STUDY,"A type of observational analytic study. Enrollment into the study is based on exposure characteristics or membership in a group. Disease, death, or other health-related outcomes are then ascertained and compared."
+ONFIDENCE INTERVAL,"A range of values for a variable of interest, e.g., a rate, constructed so that this range has a specified probability of including the true value of the variable. The specified probability is called the confidence level, and the end points of the confidence interval are called the confidence limits."
+CONTAGIOUS,Capable of being transmitted from one person to another by contact or close proximity.
+CONTROL,"In a case-control study, comparison group of persons without disease."
+DEMOGRAPHIC INFORMATION,"The person: characteristics—age, sex, race, and occupation—of descriptive epidemiology used to characterize the populations at risk."
+ENDEMIC DISEASE,The constant presence of a disease or infectious agent within a given geographic area or population group; may also refer to the usual prevalence of a given disease within such area or group.
+EXPERIMENTAL STUDY,"A study in which the investigator specifies the exposure category for each individual (clinical trial) or community (community trial), then follows the individuals or community to detect the effects of the exposure."
+HEALTH INFORMATION SYSTEM,"A combination of health statistics from various sources, used to derive information about health status, health care, provision and use of services, and impact on health."
+HOST,A person or other living organism that can be infected by an infectious agent under natural conditions.
+HYPERENDEMIC DISEASE,A disease that is constantly present at a high incidence and/or prevalence rate.
+"IMMUNITY, PASSIVE",Immunity conferred by an antibody produced in another host and acquired naturally by an infant from its mother or artificially by administration of an antibody-containing preparation (antiserum or immune globulin).
+INCIDENCE RATE,"A measure of the frequency with which an event, such as a new case of illness, occurs in a population over a period of time. The denominator is the population at risk; the numerator is the number of new cases occurring during a given time period."
+INCUBATION PERIOD,"A period of subclinical or inapparent pathologic changes following exposure, ending with the onset of symptoms of infectious disease."
+MEDICAL SURVEILLANCE,The monitoring of potentially exposed individuals to detect early symptoms of disease.
+MORTALITY RATE, A measure of the frequency of occurrence of death in a defined population during a specified interval of time.
+NORMAL DISTRIBUTION,"The symmetrical clustering of values around a central location. The properties of a normal distribution include the following: (1) It is a continuous, symmetrical distribution; both tails extend to infinity; (2) the arithmetic mean, mode, and median are identical; and, (3) its shape is completely determined by the mean and standard deviation."
+OBSERVATIONAL STUDY,"Epidemiological study in situations where nature is allowed to take its course. Changes or differences in one characteristic are studied in relation to changes or differences in others, without the intervention of the investigator."
+ODDS RATIO, A measure of association which quantifies the relationship between an exposure and health outcome from a comparative study; also known as the cross-product ratio.
+OUTBREAK,"Synonymous with epidemic. Sometimes the preferred word, as it may escape sensationalism associated with the word epidemic. Alternatively, a localized as opposed to generalized epidemic."
+PANDEMIC,An epidemic occurring over a very wide area (several countries or continents) and usually affecting a large proportion of the population.
+PERIOD PREVALENCE,The amount a particular disease present in a population over a period of time.
+POINT PREVALENCE,The amount of a particular disease present in a population at a single point in time.
+PREDICTIVE VALUE POSITIVE,A measure of the predictive value of a reported case or epidemic; the proportion of cases reported by a surveillance system or classified by a case definition which are true cases.
+PREVALENCE RATE,The proportion of persons in a population who have a particular disease or attribute at a specified point in time or over a specified period of time.
+PUBLIC HEALTH SURVEILLANCE,"The systematic collection, analysis, interpretation, and dissemination of health data on an ongoing basis, to gain knowledge of the pattern of disease occurrence and potential in a community, in order to control and prevent disease in the community."
+RANDOM SAMPLE,A sample derived by selecting individuals such that each individual has the same probability of selection.
+RELATIVE RISK,A comparison of the risk of some health-related event such as disease or death in two groups.
+RESERVOIR,"The habitat in which an infectious agent normally lives, grows and multiplies; reservoirs include human reservoirs, animals reservoirs, and environmental reservoirs."
+RISK RATIO,A comparison of the risk of some health-related event such as disease or death in two groups.
+SENSITIVITY,The ability of a system to detect epidemics and other changes in disease occurrence. The proportion of persons with disease who are correctly identified by a screening test or case definition as having disease.
+SPECIFICITY,The proportion of persons without disease who are correctly identified by a screening test or case definition as not having disease.
+VALIDITY,The degree to which a measurement actually measures or detects what it is supposed to measure.
+VECTOR,An animate intermediary in the indirect transmission of an agent that carries the agent from a reservoir to a susceptible host.
+YEARS OF POTENTIAL LIFE LOST,"A measure of the impact of premature mortality on a population, calculated as the sum of the differences between some predetermined minimum or desired life span and the age of death for individuals who died earlier than that predetermined age."
+ZOONOSES,An infectious disease that is transmissible under normal conditions from animals to humans.
