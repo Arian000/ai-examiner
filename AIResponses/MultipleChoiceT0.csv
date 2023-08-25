@@ -3,15 +3,15 @@ gpt-3.5-turbo,gpt-3.5-turbo-16k
 4,4
 4,4
 3,3
-2. HIV/AIDS,2. HIV/AIDS
+3,3
 3,3
 3,3
 1,1
-3. Propagated Outbreak,3. Propagated Outbreak
-3. Propagated Outbreak,3. Propagated Outbreak
 3,3
-3. Tuberculosis,3. Tuberculosis
-2. SARS,2. SARS
+3,3
+3,3
+2,2
+2,2
 4,4
 1,1
 2,2
@@ -19,63 +19,63 @@ gpt-3.5-turbo,gpt-3.5-turbo-16k
 3,3
 4,4
 4,4
-2. 30.30%,2. 30.30%
-2.,2.
+2,2
+2,2
+3,3
+3,3
+3,3
+3,3
+2,2
 3,3
 4,4
-"3. Higher incidence in City ""B""","3. Higher incidence in City ""B"""
-3. 102,3. 102
 2,2
-3. 38%,3. 38%
+3,3
+2,2
+2,2
+2,2
+3,3
+2,2
+4,4
+2,2
+4,4
 4,4
 1,1
 3,3
-2,2
 4,4
-2,2
-4,4
-2,2
-4,4
-4,2
-4,4
-4. Not calculable,4. Not calculable
-3. 30%,3. 30%
 3,3
-4,4
-3. Selection bias,3. Selection bias
-4,4
-1,1
+3,3
+3,3
 1,1
 4,4
 2,2
-2,2
-3,3
-3,3
-3,3
-2.,2.
 4,4
-2. Influenza,2. Influenza
-1. 4,1. 4
-1. 80%,1. 80%
-1. Method of sample selection,1. Method of sample selection
 3,3
-1. Absence of control group,1. Absence of control group
-2. Problems in randomization,2. Problems in randomization
-4,3. Nonrandom assignment of first drug
-3. Case cohort,3. Case cohort
-3. Confounding effect,3. Confounding effect
-1. 1,1. 1
 3,3
-1,1
-3,3
-4,4
-3. 34.30%,3. 34.30%
-4,4
-2,2
-4,4
+3,2
 2,2
 4,4
 2,2
 1,1
-1. Inappropriate control group selection,1. Inappropriate control group selection
-3,1
+1,1
+1,1
+3,3
+1,1
+1,1
+3,3
+4,4
+3,3
+2,2
+3,3
+1,1
+3,3
+3,3
+3,2
+4,4
+2,2
+4,4
+2,2
+4,4
+2,2
+1,1
+1,1
+3,3

@@ -1,4 +1,4 @@
-openai_api_key = '<openai-api-key>'
+openai_api_key = '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'
 
 models = (
     # 'gpt-4',
@@ -9,9 +9,82 @@ models = (
     # 'text-davinci-002',
 )
 
-multiple_choice_system = 'You are an exam taker. User will give you a question and four options.\
-    Respond just a number, number of the correct answer and nothing else.'
-longs_system = 'You are an exam taker. User will give you a question.\
-    Respond with the correct answer.'
+# multiple_choice_system = 'You are an exam taker. User will give you a question and four options.\
+#     Respond just an integer, number of the correct answer and nothing else.'
+# multiple_choice_system = 'You are the best epidemiologist student of the country with the ability to ace every exam you take. \
+#     You do it by reading between the lines of the questions and answers, predicting what the question designer has in mind while prepering the question. \
+#     Analyse every bit of information you have and see through the challenges in the question. \
+#     User will give you a question and four options.\
+#     State your reasons then end it with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to give the correct number. You should end your answers like this: "... ANS: 3". Here 3 was the correct option.'
+# multiple_choice_system = 'You are the best epidemiologist student of the country with the ability to ace every exam you take. \
+#     You do it by reading between the lines of the questions and answers, predicting what the question designer has in mind while prepering the question. \
+#     Analyse every bit of information you have and see through the challenges in the question. \
+#     User will give you a question and four options.\
+#     State your reasons then end it with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to give the correct number.'
+# multiple_choice_system = 'You are the best epidemiologist student of the country with the ability to ace every exam you take. \
+#     User will give you a question and four options.\
+#     For the given question, first write all of the epidemiology terms mentioned in the question. Then write a strategy for solving the question if needed. \
+#     additionally you read between the lines of the question and options, predicting what the question designer has in mind while prepering the question and analyse it. \
+#     Then analyse every bit of information you have and see through the challenges in the question. \
+#     State your reasons then end it with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to pick the correct option.'
+# multiple_choice_system = 'You are the best epidemiologist student of the country with the ability to ace every exam you take. \
+#     User will give you a question and four options.\
+#     For the given question, first write all of the epidemiology terms mentioned in the question. Then write a strategy for solving the question if needed. \
+#     Then analyse every bit of information you have and see through the challenges in the question. \
+#     Then end it with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to pick the correct option.'
+# multiple_choice_system = 'You are the best epidemiologist student of the country with the ability to ace every exam you take. \
+#     User will give you a question and four options.\
+#     For the given question, first write all of the epidemiology terms mentioned in the question. \
+#     Then analyse every bit of information you have and see through the challenges in the question. \
+#     Then end it with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to pick the correct option.'
+# multiple_choice_system = 'You are the best epidemiologist student of the country with the ability to ace every exam you take. \
+#     User will give you a question and four options.\
+#     For the given question, respond with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to pick the correct option. Your answer should look like this: "ANS: 3". Here 3 was the correct option.'
+# multiple_choice_system = 'You are the best epidemiologist professor with the ability to analyse every question, break it down to little peices and then solve the peices to conclude correct answer for complicated questions. \
+#     User will give you a question and four options.\
+#     For the given question, respond with this "ANS: [number of correct option]" number of correct option is just an integer between 1 to 4. Write nothing after that, not even a dot. \
+#     Do your best to pick the correct option. Your answer should look like this: "ANS: 3". Here 3 was the correct option.'
+multiple_choice_system = 'You are the best epidemiologist professor with the ability to analyse every question, \
+    break it down to little peices and then solve the peices to conclude correct answer for complicated questions. \
+    User will give you a question and four options.\
+    For the given question, first write all of the epidemiology terms mentioned in the question. \
+    Then analyse every bit of information you have and see through the challenges in the question. \
+    Then end it with this "ANS: [number of correct option]" number of correct option is just an integer \
+    between 1 to 4. Write nothing after that, not even a dot. \
+    Do your best to pick the correct option. Your answer should look like this: "ANS: 3". Here 3 was the correct option.'
+
+
+# longs_system = 'You are an exam taker. User will give you a question.\
+#     Respond with the correct answer.'
+# longs_system = 'You are the best and most experienced epidemiologist instructor. User will give you a question.\
+#     Respond with the most detailed, most intricate answer possible.'
+# longs_system = 'You are the best and most experienced epidemiologist instructor. User will give you a question.\
+#     Respond with the most intricate and to the point answer possible.'
+# longs_system = 'You are the best and most experienced epidemiologist professor. \
+#     Your TA will give you a question of an exam. Your task is to provide the ground truth answer of this question.\
+#     Respond with a to the point answer.'
+# longs_system = 'You are a helpful assistant'
+# longs_system = 'You are a helpful assistant. Help the user the best you can.'
+# longs_system = 'You are the best and most experienced epidemiologist professor. \
+#     Your task is to provide the ground truth answer of a question.\
+#     Respond with an exact, to the point, answer.'
+# longs_system = 'You are the best and most experienced epidemiologist professor. \
+#     Your task is to provide the ground truth answer of a question.\
+#     Respond with an exact, to the point, answer. Use very specific keywords that a normal high schooler understands.'
+# longs_system = 'You are the best and most experienced epidemiologist professor. \
+#     Your task is to provide the ground truth answer of a question.\
+#     Respond with an exact, to the point, answer. Use very specific keywords.'
+# longs_system = 'You are the best and most experienced epidemiologist expert. \
+#     Your task is to provide the definition of a term for a dictionary.\
+#     Respond with an exact, to the point, answer. Use specific keywords.'
+longs_system = 'You are the best and most experienced epidemiologist expert. \
+    Your task is to provide the best and most specific definition of a term for a dictionary.\
+    Respond with an exact, to the point, answer.'
 longs_examiner_system = 'You are an examiner. User will give you a question, a student response and a true answer.\
-    Respond just a number between 0 and 10, score of the student for this question.'
+    Respond just an integer between 0 and 10, score of the student for this question.'

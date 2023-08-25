@@ -48,8 +48,26 @@ def answer_longs(question, model=config.models[0]):
 def score_multiple_choice(model_responds, answers):
     corrects = 0
     wrongs = 0
+
+    c = 0
     for respond, answer in zip(model_responds, answers):
-        if respond == answer:
+        c += 1
+        res = respond[-1]
+        if res == '.': res = respond[-2]
+        if res == '1':
+            res = 'a'
+        elif res == '2':
+            res = 'b'
+        elif res == '3':
+            res = 'c'
+        elif res == '4':
+            res = 'd'
+        else:
+            print(c, res, answer)
+            # print(respond)
+
+        
+        if res == answer:
             corrects += 1
         else:
             wrongs += 1
@@ -68,7 +86,9 @@ def score_terms(questions, model_responds, answers, model=config.models[0]):
             ],
             temperature=0.0
         )
-        scores.append(int(response['choices'][0]['message']['content']))
+        score = response['choices'][0]['message']['content']
+        print(score)
+        scores.append(int(score))
     return scores
 
 def score_longs(questions, model_responds, answers, model=config.models[0]):
@@ -89,32 +109,38 @@ def score_longs(questions, model_responds, answers, model=config.models[0]):
 
 
 def do_MCTest(
-        questions_file='./Questions/MultipleChoice.csv',
+        questions_file='./Questions/MultipleChoiceA.csv',
         response_file='./AIResponses/MultipleChoiceT0.csv',
         ):
 
     mc = pd.read_csv(questions_file)
     questions = mc['Q']
     choices = mc[['A', 'B', 'C', 'D']]
+    answers = mc['Answer']
 
     models = config.models
 
     results = {}
 
     for model in models:
-        answers = []
+        responses = []
         for q, c in zip(questions, choices.iterrows()):
             try:
-                answer = answer_multiple_choice(q, list(c[1]), model)
+                response = answer_multiple_choice(q, list(c[1]), model)
             except:
-                answer = answer_multiple_choice(q, list(c[1]), model)
-            print(answer)
-            answers.append(answer)
+                response = answer_multiple_choice(q, list(c[1]), model)
+            print(response)
+            responses.append(response)
 
-        results[model] = answers
+        results[model] = responses
 
     df = pd.DataFrame(results)
     df.to_csv(response_file, index=False)
+    results = pd.read_csv(response_file)
+
+    for model in models:
+        score = score_multiple_choice(results[model], answers)
+        print(model, score)
 
 def do_TerminologyTest(
         questions_file='./Questions/epidemiology_terminology.csv',
@@ -123,7 +149,6 @@ def do_TerminologyTest(
 
     terminology = pd.read_csv(questions_file)
     questions = terminology['Q']
-    # ground_truth = terminology['A']
 
     models = config.models
 
@@ -146,18 +171,47 @@ def do_TerminologyTest(
     df.to_csv(response_file, index=False)
     return df
 
+def do_longs(
+        questions_file='./Questions/Longs.csv',
+        response_file='./AIResponses/LongsTestT0.csv',
+        ):
+
+    longs = pd.read_csv(questions_file)
+    questions = longs['Q']
+
+    models = config.models
+
+    results = {}
+
+    for model in models:
+        answers = []
+        for q in questions:
+            try:
+                answer = answer_longs(q, model)
+            except:
+                answer = answer_longs(q, model)
+
+            print(answer)
+            answers.append(answer)
+
+        results[model] = answers
+
+    df = pd.DataFrame(results)
+    df.to_csv(response_file, index=False)
+    return df
+
 
 def score_terminology_test(
         questions_file='./Questions/epidemiology_terminology.csv',
-        responses_file='./AIResponses/TerminologyTestT0.csv',
+        response_file='./AIResponses/TerminologyTestT0.csv',
         scores_file='./Scores/TerminologyScoresT0.csv',
         ):
-    
+
     terminology = pd.read_csv(questions_file)
     questions = terminology['Q']
     answers = terminology['A']
-    
-    responses = pd.read_csv(responses_file)
+
+    responses = pd.read_csv(response_file)
 
     df = pd.DataFrame()
     df['questions'] = questions
@@ -165,12 +219,39 @@ def score_terminology_test(
     for model in responses:
         scores[model] = score_terms(questions, responses[model], answers)
         df[f'score_{model}'] = scores[model]
-        print(np.sum(scores[model]))
+        print(np.sum(scores[model]), np.sum(scores[model]) / (len(scores[model]) * 10))
 
     df.to_csv(scores_file, index=False)
 
+def score_MCTest(
+        questions_file='./Questions/MultipleChoiceA.csv',
+        response_file='./AIResponses/MultipleChoiceT0.csv',
+        ):
+
+    mc = pd.read_csv(questions_file)
+    answers = mc['Answer']
+    models = config.models
+    results = pd.read_csv(response_file)
+
+    for model in models:
+        score = score_multiple_choice(results[model], answers)
+        print(model, score)
+
 if __name__ == '__main__':
 
-    do_MCTest()
-    # do_TerminologyTest()
-    score_terminology_test()
+    # tag = '_T0_PE12'
+    # response_filename = f'./AIResponses/terminology{tag}.csv'
+    # score_filename = f'./Scores/terminology{tag}.csv'
+    # do_TerminologyTest(response_file=response_filename)
+    # score_terminology_test(response_file=response_filename, scores_file=score_filename)
+
+    # tag = '_T0_PE8'
+    # response_filename = f'./AIResponses/multiple_choice{tag}.csv.csv'
+    # score_filename = f'./Scores/multiple_choice{tag}.csv'
+    # do_MCTest(response_file=response_filename)
+    # score_MCTest(response_file=response_filename)
+
+    tag = '_T0_PE2'
+    response_filename = f'./AIResponses/Longs{tag}.csv.csv'
+    # score_filename = f'./Scores/Longs{tag}.csv'
+    do_longs(response_file=response_filename)
