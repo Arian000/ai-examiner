@@ -1,4 +1,4 @@
-openai_api_key = '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'
+openai_api_key = '<>'
 
 models = (
     # 'gpt-4',
