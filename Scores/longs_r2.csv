@@ -1,0 +1,21 @@
+questions,score_gpt-4,score_gpt-3.5-turbo,score_gpt-3.5-turbo-16k
+"In population A number of smokers has been reported as double as population B, explain the possible reasons.",6,6,6
+Describe different type of risk factors according to changeability and application,8,7,7
+"In one study 5000 individuals have been assessed, if smoking frequency in total is 20% and smoking frequency in men is double women and gender ratio (female to male) is 1.5, what is the frequency of smoking in men",4,2,2
+"In one study on 5000 individuals, prevalence of smoking at the beginning was 20% after one year it has become 25%, what is one year incidence of smoking in this study",10,10,9
+List the biases which may happen in assessment of a screening program effectiveness.,5,8,8
+"In one study on 800 individuals, prevalence of disease was 40% and screening test positive rate was 50%, if there were 20 false positive results, what is the sensitivity and specificity of the screening test",8,0,0
+"First screening test with 90% sensitivity and 90% specificity and second one with 95% sensitivity and 80% specificity have been used for a disease, probability of being disease with a positive result of the first test is how much more/less than a positive result of the second test?",9,2,0
+"A 3 year old child has come with fever, write the steps for assessment and making decision for the child according to the IMCI protocol.",8,8,6
+Explain the steps in investigation of an Outbreak (Epidemy)?,9,10,10
+List different types of Outbreak (Epidemy)?,2,4,6
+Describe different types of surveillance system with one example for each.,10,9,9
+What are the differences of a Cohort study with a Case Control study?,9,10,10
+"In a Randomized Clinical Trial for comparison of the effects of two different drugs, 40 patients shall enter into the study. According to the appropriate method for randomization write down the steps of randomization?",10,10,10
+"For one disease an infected person can transmit the infection to 5 persons in disease duration, if there is a vaccine with 90% effectiveness for this disease, what shall be vaccine coverage rate for disease control in that community?",9,7,8
+"In one assessment from 1000 vaccinated and 500 unvaccinated individuals, 20 and 40 catch the disease respectively, what is the effectiveness of that vaccine",5,6,6
+List the most important risk factors of the most killing cancer in women?,10,9,10
+explain the main approach for prevention and control of Cardio-Vascular diseases.,9,9,9
+"For one person, FBS, 2HGTT and HbA1c, have been requested. In which situation he will be diabetic? In which condition he will be impaired fasting blood sugar? In which situation he will be impaired glucose tolerance test? In which situation he will be normal?",7,8,8
+List all situations which need urgent referral in assessment of a child for malnutrition and anemia according to IMCI?,8,6,6
+List all different types of errors and biases in a Cross-Sectional study and the ways to control them.,9,8,8

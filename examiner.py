@@ -8,12 +8,12 @@ from configs import config
 openai.api_key = config.openai_api_key
 
 
-def answer_multiple_choice(question, options, model=config.models[0]):
+def answer_multiple_choice(question, options, system_prompt, model=config.models[0]):
     options_text = '\n'.join(f'{i}. {option}' for i, option in enumerate(options, start=1))
     response = openai.ChatCompletion.create(
         model=model,
         messages=[
-            {'role': 'system', 'content': config.multiple_choice_system},
+            {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': f'{question}\n{options_text}'}
         ],
         temperature=0.0
@@ -21,11 +21,11 @@ def answer_multiple_choice(question, options, model=config.models[0]):
 
     return response['choices'][0]['message']['content']
 
-def define_terms(question, model=config.models[0]):
+def define_terms(question, system_prompt, model=config.models[0]):
     response = openai.ChatCompletion.create(
         model=model,
         messages=[
-            {'role': 'system', 'content': config.longs_system},
+            {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': f'What is {question} in epidemiology?'}
         ],
         temperature=0.0
@@ -33,11 +33,11 @@ def define_terms(question, model=config.models[0]):
 
     return response['choices'][0]['message']['content']
 
-def answer_longs(question, model=config.models[0]):
+def answer_longs(question, system_prompt, model=config.models[0]):
     response = openai.ChatCompletion.create(
         model=model,
         messages=[
-            {'role': 'system', 'content': config.longs_system},
+            {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': f'{question}'}
         ],
         temperature=0.0
@@ -45,7 +45,7 @@ def answer_longs(question, model=config.models[0]):
 
     return response['choices'][0]['message']['content']
 
-def score_multiple_choice(model_responds, answers):
+def score_multiple_choice(model_responds, answers, verbose=True):
     corrects = 0
     wrongs = 0
 
@@ -62,8 +62,7 @@ def score_multiple_choice(model_responds, answers):
             res = 'c'
         elif res == '4':
             res = 'd'
-        else:
-            print(c, res, answer)
+        elif verbose: print(c, res, answer)
             # print(respond)
 
         
@@ -73,7 +72,7 @@ def score_multiple_choice(model_responds, answers):
             wrongs += 1
     return 100 * corrects / (corrects + wrongs)
 
-def score_terms(questions, model_responds, answers, model=config.models[0]):
+def score_terms(questions, model_responds, answers, model=config.models[0], verbose=False):
     scores = []
     for q, r, a in zip(questions, model_responds, answers):
         response = openai.ChatCompletion.create(
@@ -87,30 +86,34 @@ def score_terms(questions, model_responds, answers, model=config.models[0]):
             temperature=0.0
         )
         score = response['choices'][0]['message']['content']
-        print(score)
+        if verbose: print(score)
         scores.append(int(score))
     return scores
 
-def score_longs(questions, model_responds, answers, model=config.models[0]):
+def score_longs(questions, model_responds, answers, model=config.models[0], verbose=True):
     scores = []
-    for question, respond, answer in zip((questions, model_responds, answers)):
+    for q, r, a in zip(questions, model_responds, answers):
         response = openai.ChatCompletion.create(
             model=model,
             messages=[
                 {'role': 'system', 'content': config.longs_examiner_system},
-                {'role': 'user', 'content': f'question: "{question}"\n\
-                                              student response: "{respond}"\n\
-                                              true answer: "{answer}"'}
-            ]
+                {'role': 'user', 'content': f'question: "{q}"\n\
+                                              student response: "{r}"\n\
+                                              true answer: "{a}"'}
+            ],
+            temperature=0.0
         )
-        scores.append(int(response['choices'][0]['message']['content']))
-    print(scores)
-    return np.sum(scores) / len(scores)
+        score = response['choices'][0]['message']['content']
+        if verbose: print(score)
+        scores.append(int(score))
+    return scores
 
 
 def do_MCTest(
+        system_prompt,
         questions_file='./Questions/MultipleChoiceA.csv',
         response_file='./AIResponses/MultipleChoiceT0.csv',
+        verbose=False
         ):
 
     mc = pd.read_csv(questions_file)
@@ -126,10 +129,10 @@ def do_MCTest(
         responses = []
         for q, c in zip(questions, choices.iterrows()):
             try:
-                response = answer_multiple_choice(q, list(c[1]), model)
+                response = answer_multiple_choice(q, list(c[1]), system_prompt, model)
             except:
-                response = answer_multiple_choice(q, list(c[1]), model)
-            print(response)
+                response = answer_multiple_choice(q, list(c[1]), system_prompt, model)
+            if verbose: print(response)
             responses.append(response)
 
         results[model] = responses
@@ -140,11 +143,13 @@ def do_MCTest(
 
     for model in models:
         score = score_multiple_choice(results[model], answers)
-        print(model, score)
+        if verbose: print(model, score)
 
 def do_TerminologyTest(
+        system_prompt,
         questions_file='./Questions/epidemiology_terminology.csv',
         response_file='./AIResponses/TerminologyTestT0.csv',
+        verbose=False
         ):
 
     terminology = pd.read_csv(questions_file)
@@ -158,11 +163,11 @@ def do_TerminologyTest(
         answers = []
         for q in questions:
             try:
-                answer = define_terms(q, model)
+                answer = define_terms(q, system_prompt, model)
             except:
-                answer = define_terms(q, model)
+                answer = define_terms(q, system_prompt, model)
 
-            print(answer)
+            if verbose: print(answer)
             answers.append(answer)
 
         results[model] = answers
@@ -172,8 +177,10 @@ def do_TerminologyTest(
     return df
 
 def do_longs(
+        system_prompt,
         questions_file='./Questions/Longs.csv',
         response_file='./AIResponses/LongsTestT0.csv',
+        verbose=False
         ):
 
     longs = pd.read_csv(questions_file)
@@ -187,11 +194,11 @@ def do_longs(
         answers = []
         for q in questions:
             try:
-                answer = answer_longs(q, model)
+                answer = answer_longs(q, system_prompt, model)
             except:
-                answer = answer_longs(q, model)
+                answer = answer_longs(q, system_prompt, model)
 
-            print(answer)
+            if verbose: print(answer)
             answers.append(answer)
 
         results[model] = answers
@@ -203,8 +210,8 @@ def do_longs(
 
 def score_terminology_test(
         questions_file='./Questions/epidemiology_terminology.csv',
-        response_file='./AIResponses/TerminologyTestT0.csv',
-        scores_file='./Scores/TerminologyScoresT0.csv',
+        response_file='./AIResponses/terminology_test_r0.csv',
+        scores_file='./Scores/terminology_scores_r0.csv',
         ):
 
     terminology = pd.read_csv(questions_file)
@@ -218,6 +225,28 @@ def score_terminology_test(
     scores = {}
     for model in responses:
         scores[model] = score_terms(questions, responses[model], answers)
+        df[f'score_{model}'] = scores[model]
+        print(np.sum(scores[model]), np.sum(scores[model]) / (len(scores[model]) * 10))
+
+    df.to_csv(scores_file, index=False)
+
+def score_longs_test(
+        questions_file='./Book1.csv',
+        response_file='./AIResponses/longs_r0.csv',
+        scores_file='./Scores/longs_r0.csv',
+        ):
+
+    terminology = pd.read_csv(questions_file)
+    questions = terminology['Q']
+    answers = terminology['A']
+
+    responses = pd.read_csv(response_file)
+
+    df = pd.DataFrame()
+    df['questions'] = questions
+    scores = {}
+    for model in responses:
+        scores[model] = score_longs(questions, responses[model], answers)
         df[f'score_{model}'] = scores[model]
         print(np.sum(scores[model]), np.sum(scores[model]) / (len(scores[model]) * 10))
 
@@ -237,21 +266,25 @@ def score_MCTest(
         score = score_multiple_choice(results[model], answers)
         print(model, score)
 
+
 if __name__ == '__main__':
 
-    # tag = '_T0_PE12'
-    # response_filename = f'./AIResponses/terminology{tag}.csv'
-    # score_filename = f'./Scores/terminology{tag}.csv'
-    # do_TerminologyTest(response_file=response_filename)
-    # score_terminology_test(response_file=response_filename, scores_file=score_filename)
 
-    # tag = '_T0_PE8'
-    # response_filename = f'./AIResponses/multiple_choice{tag}.csv.csv'
-    # score_filename = f'./Scores/multiple_choice{tag}.csv'
-    # do_MCTest(response_file=response_filename)
-    # score_MCTest(response_file=response_filename)
+    for level in range(2, 3):
+        tag = f'_r{level}'
+        system_prompt = config.reported_system_prompts['terms'][level]
+        response_filename = f'./AIResponses/terminology{tag}.csv'
+        score_filename = f'./Scores/terminology{tag}.csv'
+        do_TerminologyTest(system_prompt, response_file=response_filename, verbose=True)
+        score_terminology_test(response_file=response_filename, scores_file=score_filename)
 
-    tag = '_T0_PE2'
-    response_filename = f'./AIResponses/Longs{tag}.csv.csv'
-    # score_filename = f'./Scores/Longs{tag}.csv'
-    do_longs(response_file=response_filename)
+        # system_prompt = config.reported_system_prompts['multiple_choice'][level]
+        # response_filename = f'./AIResponses/multiple_choice{tag}.csv.csv'
+        # do_MCTest(system_prompt, response_file=response_filename, verbose=True)
+        # score_MCTest(response_file=response_filename)
+
+        # system_prompt = config.reported_system_prompts['longs'][level]
+        # response_filename = f'./AIResponses/longs{tag}.csv.csv'
+        # score_filename = f'./Scores/longs{tag}.csv'
+        # do_longs(system_prompt, response_file=response_filename, verbose=True)
+        # score_longs_test(response_file=response_filename, scores_file=score_filename)

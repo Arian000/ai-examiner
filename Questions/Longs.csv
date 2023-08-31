@@ -1,21 +1,65 @@
 Q,A
-"In population A number of smokers has been reports as double as population B, explain the possible reasons.",
-"Describe different type of risk factors according to changeability and application?",
-"In one study 5000 individuals have been assessed, if smoking frequency in total is 20% and smoking frequency in men is double women and gender ratio (female to male) is 1.5, what is the frequency of smoking in men? ",
-"In one study on 5000 individuals, prevalence of smoking at the beginning was 20% after one year it has become 25%, what is one year incidence of smoking in this study?",
-"List the biases which may happen in assessment of a screening program effectiveness and list the ways to control them.",
-"In one study on 800 individuals, prevalence of disease was 40% and screening test positive rate was 50%, if there were 20 false positive results, what is the sensitivity and specificity of the screening test?",
-"First screening test with 90% sensitivity and 90% specificity and second one with 95% sensitivity and 80% specificity have been used for a disease, probability of being disease with a positive result of the first test is how much more/less than a positive result of the second test?",
-"A 3 year old child has come with fever, write the steps for assessment and making decision for the child according to the IMCI protocol.",
-"List all situations which need urgent referral in assessment of a child for malnutrition and anemia according to IMCI?",
-"Explain the steps in investigation of an Outbreak (Epidemy)?",
-"List different types of Outbreak (Epidemy)?",
-"Describe different types of surveillance system with one example for each.",
-"What are the differences of a Cohort study with a Case Control study?",
-"In a Randomized Clinical Trial for comparison of the effects of two different drugs, 40 patients shall enter into the study. According to the appropriate method for randomization write down the steps of randomization?",
-"List all different types of errors and biases in a Cross-Sectional study and the ways to control them.",
-"For one disease an infected person can transmit the infection to 5 persons in disease duration, if there is a vaccine with 90% effectiveness for this disease, what shall be vaccine coverage rate for disease control in that community?",
-"In one assessment from 1000 vaccinated and 500 unvaccinated individuals, 20 and 40 catch the disease respectively, what is the effectiveness of that vaccine?",
-"List the most important risk factors of the most killing cancer in women?",
-"Explain the main approach for prevention and control of Cardio-Vascular diseases.",
-"For one person, FBS, 2HGTT and HbA1c, have been requested. In which situation he will be diabetic? In which condition he will be impaired fasting blood sugar? In which situation he will be impaired glucose tolerance test? In which situation he will be normal?",
+"In population A number of smokers has been reported as double as population B, explain the possible reasons.","Important factors for reporting the answer include:
+The total population size and the number of individuals represented in the denominator of the fraction.
+The societal definition of smoking.
+The methodology for reporting cases of smoking.
+The rate of immigration into the community."
+Describe different type of risk factors according to changeability and application,"Based on Changeability:
+Unchangeable Risk Factors: Such as age and sex.
+Potentially Changeable Risk Factors: For example, blood pressure.
+Currently Unchangeable, but Potentially Changeable Risk Factors: Genetics is an example that, while currently unchangeable, may become modifiable in the future.
+According to Application:
+Etiological Risk Factors: For instance, smoking as a risk factor for cancer.
+Diagnostic Risk Factors: Such as the combination of being a smoker, being older, and being male, which increases the risk for pancreatic cancer.
+Prognostic Risk Factors: For example, the continued act of smoking in someone who has already suffered a heart attack."
+"In one study 5000 individuals have been assessed, if smoking frequency in total is 20% and smoking frequency in men is double women and gender ratio (female to male) is 1.5, what is the frequency of smoking in men","0.2=0.4*2*x+0.6*x=1.4x
+X=0.2/1.4
+14.3%
+28.6%"
+"In one study on 5000 individuals, prevalence of smoking at the beginning was 20% after one year it has become 25%, what is one year incidence of smoking in this study","after one year:1000,after two tear:1250,1250-1000=250,250/4000=6.25%"
+List the biases which may happen in assessment of a screening program effectiveness.,"Lead time Bias,Length Bias"
+"In one study on 800 individuals, prevalence of disease was 40% and screening test positive rate was 50%, if there were 20 false positive results, what is the sensitivity and specificity of the screening test",Incalculable
+"First screening test with 90% sensitivity and 90% specificity and second one with 95% sensitivity and 80% specificity have been used for a disease, probability of being disease with a positive result of the first test is how much more/less than a positive result of the second test?",there is no Prevalence so this is incalculable.
+"A 3 year old child has come with fever, write the steps for assessment and making decision for the child according to the IMCI protocol.","Check for danger signs.Assess the presence or absence of fever.Examine for post-auricular mastoiditis.Evaluate for neck stiffness.Evaluate for neck stiffness.Examine for oral ulcers.Consider whether the patient lives in a malaria-prone area (with a prevalence rate exceeding 5%).Immediate referral is required in the presence of any danger signs, mastoiditis, or neck stiffness.If severe redness of the eyes or severe oral ulcers are present, immediate referral is also necessary.In the presence of moderate redness of the eyes and oral ulcers, the condition is categorized as ""yellow"" and should be treated accordingly. If the patient is located in an area where malaria is unlikely, or presents with a runny nose, the condition is categorized as ""green"" and will receive standard treatment. In areas with a malaria prevalence rate exceeding 5%, treatment with anti-malarial drugs will be administered."", List all situations which need urgent referral in assessment of a child for malnutrition and anemia according to IMCI?, Should there be atrophy of the shoulder and gluteal muscles, indicative of conditions like kwashiorkor and marasmus, an urgent referral is warranted.
+In cases of severe anemia, evidenced by pallor of the palmar creases, urgent referral is also essential.
+The presence of diarrhea in conjunction with malnutrition necessitates an urgent referral as well.    "
+Explain the steps in investigation of an Outbreak (Epidemy)?,"Case Identification: Specify the epidemic and corroborate its existence by identifying cases. Spatial and Temporal Distribution: Study the distribution of cases based on location and time, while also investigating their interaction.Variable Analysis: Examine combinations and interactions of variables related to the disease.Hypothesis Formulation: Generate hypotheses based on the collected information and existing knowledge about the disease.Hypothesis Testing: Validate hypotheses through the design of targeted studies, such as case-control studies.Control Measures: Implement strategies to control the current epidemic and take preventive measures against future outbreaks.Research Reporting: Compile a written report summarizing the research findings.Findings Dissemination: Present the findings to both executive authorities and the general public for appropriate action."
+List different types of Outbreak (Epidemy)?,"Endemic
+epidemic
+sporadic
+pandemic"
+Describe different types of surveillance system with one example for each.,"Passive Surveillance Model: In this approach, the reporting of diseases is generally initiated by caregivers and health service providers.Active Surveillance Model: Under this model, health departments proactively contact healthcare providers to request reports on disease occurrence.Syndromic Surveillance Model: This model employs non-stringent or pre-diagnostic indicators to identify emerging health issues."
+What are the differences of a Cohort study with a Case Control study?,"Starting Point: Cohort studies commence with exposure variables, while case-control studies begin with the outcome variables.
+Study Direction: Cohort studies are generally prospective, whereas case-control studies are retrospective in nature. 
+Measure of Frequency: Cohort studies assess incidence rates, while case-control studies focus on prevalence.
+Outcome vs. Risk Factors: Multiple outcomes can be evaluated in a cohort study, as opposed to multiple risk factors in a case-control study.
+Statistical Measures: Relative Risk (RR) is the key index used in cohort studies, while Odds Ratio (OR) is utilized in case-control studies.
+Causal Relationship: Cohort studies are designed to study cause-and-effect relationships, while case-control studies are not inherently equipped to assess causality.
+Causality and Confounders: Neither study type can definitively prove a causal relationship. However, cohort studies may include confounders, and case-control studies lack temporality, making causal inference more challenging.
+Applicability: Cohort studies are typically used for common outcomes, while case-control studies are more appropriate for rare conditions."
+"In a Randomized Clinical Trial for comparison of the effects of two different drugs, 40 patients shall enter into the study. According to the appropriate method for randomization write down the steps of randomization?","Block Randomization Process in Two-Intervention Studies
+Identification of Interventions: Initially, enumerate the interventions under investigation and assign a unique alphabetical identifier to each one.
+Block Size Calculation: Determine the optimal block size for the study. A balanced approach typically involves setting the block size as twice the number of interventions. In a two-intervention study, for example, the optimal block size would be four.
+Block Variation: Enumerate the possible permutations of the blocks (e.g., AABB, ABAB, ABBA, etc.) and randomly assign a numerical identifier to each permutation.
+Number of Blocks: Compute the total number of blocks needed to encompass the entire sample. This is achieved by dividing the total sample size by the block size and rounding up to the nearest whole number. For instance, in a study with 40 participants, requiring 20 in each intervention group, 10 blocks of size 4 would be needed.
+Maximum Repetitions: Specify the upper limit for how many times each block can be repeated. In this context, the limit is set at two.
+Random Block Selection: Employ a randomization technique to select the necessary number of blocks. Monitor the frequency of each block's selection, ensuring it does not exceed the preset repetition limit. For instance, if the sequence is 4-3-5-1-2-3-4-6-1-2, annotate repeated blocks to keep track of the count.
+Sequence Randomization: Once the blocks are selected, randomize their sequence. This can be executed digitally. For instance, if the original sequence is 1 to 10, a randomized sequence could be 3-5-7-4-2-1-10-8-9-6.
+Intervention Randomization: Lastly, to mitigate any residual bias, randomly assign the alphabetic identifiers to the actual interventions. This final step could be as simple as a coin toss to determine which intervention is labeled 'A' or 'B'."",
+""List all different types of errors and biases in a Cross-Sectional study and the ways to control them."",
+""Chance Error: This type of error can be mitigated by correctly calculating the required sample size and subsequently adjusting the p-value. Increasing the sample size enhances the statistical power of the study, making it less susceptible to chance error.
+Selection Error: This can be mitigated through careful and rigorous sampling methods. The gold standard for reducing selection error is employing simple random sampling techniques.
+Measurement Error: To address measurement errors, it's crucial to precisely define the protocol and the method of measurement. Standardizing measurement techniques can substantially reduce this type of error.
+Confounding Error: Confounding errors can be rectified through multivariate analysis, which adjusts for multiple variables that could potentially skew the results."
+"For one disease an infected person can transmit the infection to 5 persons in disease duration, if there is a vaccine with 90% effectiveness for this disease, what shall be vaccine coverage rate for disease control in that community?",0.8/0.9=88.9%
+"In one assessment from 1000 vaccinated and 500 unvaccinated individuals, 20 and 40 catch the disease respectively, what is the effectiveness of that vaccine",Rr=20/1000/40/500=0.125 🡪 88.5%
+List the most important risk factors of the most killing cancer in women?,"The answer is breast cancer and its risk factors include:Genetics, inactivity, obesity, The number of years of menarche,Family history of breast cancer, A history of breast cancer in the individual, Biopsy history, History of mammography and early exposure to radiation"
+explain the main approach for prevention and control of Cardio-Vascular diseases.,"Identification of Risk Factors: The first step involves a comprehensive assessment to identify potential risk factors associated with heart disease, such as age, lifestyle habits, and pre-existing medical conditions. Screening and Risk Assessment: Based on the identified risk factors, individuals undergo screening tests. The purpose of this step is to categorize people according to their risk levels. Ten-year Heart Disease Risk Calculation: Utilizing the information gathered, we calculate the individual's 10-year risk for developing heart disease. Various validated models may be used for this purpose. Integrated Risk Factor Intervention: For risk factors that can be modified, an integrated approach is implemented. This involves employing various prevention methods—such as primordial, primary, and secondary prevention—along with rehabilitation programs and measures to prevent unnecessary medical procedures for patients."
+"For one person, FBS, 2HGTT and HbA1c, have been requested. In which situation he will be diabetic? In which condition he will be impaired fasting blood sugar? In which situation he will be impaired glucose tolerance test? In which situation he will be normal?","diabetic one: FBS>=126 , 2HGTT>200 and HbA1c>7.5
+impaired fasting:  126>FBS>100, 2HGTT<140 and HbA1c<6.5
+impaired glucose tolerance: FBS<100, 140<2HGTT<200 and HbA1c<6.5"
+List all situations which need urgent referral in assessment of a child for malnutrition and anemia according to IMCI?,"Should there be atrophy of the shoulder and gluteal muscles, indicative of conditions like kwashiorkor and marasmus, an urgent referral is warranted. In cases of severe anemia, evidenced by pallor of the palmar creases, urgent referral is also essential. The presence of diarrhea in conjunction with malnutrition necessitates an urgent referral as well."
+List all different types of errors and biases in a Cross-Sectional study and the ways to control them.,"1.Chance Error: This type of error can be mitigated by correctly calculating the required sample size and subsequently adjusting the p-value. Increasing the sample size enhances the statistical power of the study, making it less susceptible to chance error.
+2.Selection Error: This can be mitigated through careful and rigorous sampling methods. The gold standard for reducing selection error is employing simple random sampling techniques.
+3.Measurement Error: To address measurement errors, it's crucial to precisely define the protocol and the method of measurement. Standardizing measurement techniques can substantially reduce this type of error.
+4.Confounding Error: Confounding errors can be rectified through multivariate analysis, which adjusts for multiple variables that could potentially skew the results."
